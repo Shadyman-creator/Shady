@@ -27,9 +27,12 @@ int main() {
 	for (int i = 0; i < n; i++) {
 
 		for (int j = 0; j < m; j++) {
+
 			if (A[i] == B[j]) {
 				bool dubl = false;
+
 				for (int m = 0; m < k; m++) {
+
 					if (C[k] == A[i]) {
 						dubl = true;
 						break;

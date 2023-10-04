@@ -53,7 +53,6 @@ int main() {
         std::cin >> dynamicArray[i];
     }
 
-    // Вызов функции
     dynamicArray = removePrimes(dynamicArray, size);
 
 

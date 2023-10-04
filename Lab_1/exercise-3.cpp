@@ -37,14 +37,14 @@ int main() {
             }
         }
         if (!nodub) {
-            bool Duplicate = false;
+            bool Dubl = false;
             for (int m = 0; m < k; m++) {
                 if (C[m] == A[i]) {
-                    Duplicate = true;
+                    Dubl = true;
                     break;
                 }
             }
-            if (!Duplicate) {
+            if (!Dubl) {
                 C[k++] = A[i];
             }
         }
@@ -52,22 +52,22 @@ int main() {
 
 
     for (int i = 0; i < m; i++) {
-        bool isCommon = false;
+        bool noDub2 = false;
         for (int j = 0; j < n; j++) {
             if (B[i] == A[j]) {
-                isCommon = true;
+                noDub2 = true;
                 break;
             }
         }
-        if (!isCommon) {
-            bool isDuplicate = false;
+        if (!noDub2) {
+            bool Dubl = false;
             for (int m = 0; m < k; m++) {
                 if (C[m] == B[i]) {
-                    isDuplicate = true;
+                    Dubl = true;
                     break;
                 }
             }
-            if (!isDuplicate) {
+            if (!Dubl) {
                 C[k++] = B[i];
             }
         }

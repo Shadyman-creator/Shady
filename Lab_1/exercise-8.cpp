@@ -1,8 +1,6 @@
 #include <iostream>
 
 void distributeElements(const int* staticArray, int size, int*& positiveArray, int& positiveSize, int*& negativeArray, int& negativeSize, int*& zeroArray, int& zeroSize) {
-    positiveSize = negativeSize = zeroSize = 0;
-
 
     for (int i = 0; i < size; ++i) {
         if (staticArray[i] > 0) {
