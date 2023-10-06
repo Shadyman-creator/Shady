@@ -1,6 +1,6 @@
 #include <iostream>
 
-void distributeElements(const int* staticArray, int size, int*& positiveArray, int& positiveSize, int*& negativeArray, int& negativeSize, int*& zeroArray, int& zeroSize) {
+void distributeElements(const int* staticArray, int size, int* positive, int& positiveSize, int*& negative, int& negativeSize, int*& zero, int& zeroSize) {
 
     for (int i = 0; i < size; ++i) {
         if (staticArray[i] > 0) {
@@ -15,21 +15,21 @@ void distributeElements(const int* staticArray, int size, int*& positiveArray, i
     }
 
 
-    positiveArray = new int[positiveSize];
-    negativeArray = new int[negativeSize];
-    zeroArray = new int[zeroSize];
+    positive = new int[positiveSize];
+    negative = new int[negativeSize];
+    zero = new int[zeroSize];
 
 
     int posIdx = 0, negIdx = 0, zeroIdx = 0;
     for (int i = 0; i < size; ++i) {
         if (staticArray[i] > 0) {
-            positiveArray[posIdx++] = staticArray[i];
+            positive[posIdx++] = staticArray[i];
         }
         else if (staticArray[i] < 0) {
-            negativeArray[negIdx++] = staticArray[i];
+            negative[negIdx++] = staticArray[i];
         }
         else {
-            zeroArray[zeroIdx++] = staticArray[i];
+            zero[zeroIdx++] = staticArray[i];
         }
     }
 }
@@ -39,14 +39,14 @@ int main() {
     int staticArray[] = { 3, -1, 0, 5, -2, 7, 0 };
     int size = sizeof(staticArray) / sizeof(staticArray[0]);
 
-    int* positiveArray = nullptr;
+    int* positive = nullptr;
     int positiveSize = 0;
-    int* negativeArray = nullptr;
+    int* negative = nullptr;
     int negativeSize = 0;
-    int* zeroArray = nullptr;
+    int* zero = nullptr;
     int zeroSize = 0;
 
-    distributeElements(staticArray, size, positiveArray, positiveSize, negativeArray, negativeSize, zeroArray, zeroSize);
+    distributeElements(staticArray, size, positive, positiveSize, negative, negativeSize, zero, zeroSize);
 
     std::cout << "Статистический массив: ";
     for (int i = 0; i < size; ++i) {
@@ -56,25 +56,25 @@ int main() {
 
     std::cout << "Положительные элементы: ";
     for (int i = 0; i < positiveSize; ++i) {
-        std::cout << positiveArray[i] << " ";
+        std::cout << positive[i] << " ";
     }
     std::cout << std::endl;
 
     std::cout << "Отрицательные элементы: ";
     for (int i = 0; i < negativeSize; ++i) {
-        std::cout << negativeArray[i] << " ";
+        std::cout << negative[i] << " ";
     }
     std::cout << std::endl;
 
     std::cout << "Нулевые элементы: ";
     for (int i = 0; i < zeroSize; ++i) {
-        std::cout << zeroArray[i] << " ";
+        std::cout << zero[i] << " ";
     }
     std::cout << std::endl;
 
-    delete[] positiveArray;
-    delete[] negativeArray;
-    delete[] zeroArray;
+    delete[] positive;
+    delete[] negative;
+    delete[] zero;
 
     return 0;
 }
