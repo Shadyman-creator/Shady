@@ -1,6 +1,6 @@
 #include <iostream>
 
-void distributeElements(const int* staticArray, int size, int* positive, int& positiveSize, int*& negative, int& negativeSize, int*& zero, int& zeroSize) {
+void distributeElements(const int* staticArray, int size, int*& positive, int& positiveSize, int*& negative, int& negativeSize, int*& zero, int& zeroSize) {
 
     for (int i = 0; i < size; ++i) {
         if (staticArray[i] > 0) {
